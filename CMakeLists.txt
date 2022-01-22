@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(Venom VERSION 0.1.0)
+project(Fora VERSION 0.1.0)
 set (CMAKE_CXX_STANDARD 11)
 
 include(CTest)
 enable_testing()
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
-add_executable(Venom ${PROJECT_SOURCE_DIR}/src/main.cpp ${PROJECT_SOURCE_DIR}/src/mylib.cpp ${PROJECT_SOURCE_DIR}/src/config.cpp)
+add_executable(Fora ${PROJECT_SOURCE_DIR}/src/main.cpp ${PROJECT_SOURCE_DIR}/src/mylib.cpp ${PROJECT_SOURCE_DIR}/src/config.cpp)
 
 find_package(Boost REQUIRED filesystem date_time serialization)
 
@@ -25,4 +25,4 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR})
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
-target_link_libraries(Venom Boost::filesystem Boost::date_time Boost::serialization)
+target_link_libraries(Fora pthread Boost::filesystem Boost::date_time Boost::serialization)
