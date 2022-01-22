@@ -8,7 +8,7 @@ enable_testing()
 include_directories(${PROJECT_SOURCE_DIR}/include)
 add_executable(Venom ${PROJECT_SOURCE_DIR}/src/main.cpp ${PROJECT_SOURCE_DIR}/src/mylib.cpp ${PROJECT_SOURCE_DIR}/src/config.cpp)
 
-find_package(Boost REQUIRED date_time serialization)
+find_package(Boost REQUIRED filesystem date_time serialization)
 
 
 #cmake build Path
@@ -25,4 +25,4 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR})
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
-target_link_libraries(Venom Boost::date_time Boost::serialization)
+target_link_libraries(Venom Boost::filesystem Boost::date_time Boost::serialization)
